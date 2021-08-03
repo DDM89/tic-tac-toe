@@ -20,15 +20,16 @@ let player1 = "X"
 let player2 = "O"
 let gameOver = false
 
+
 //for loop for each cell
 const cellArray = document.getElementsByClassName("square");
 for (let eachCell of cellArray) {
     eachCell.addEventListener('click', cellClicked);
 }
-//each cell clicked
+
 
 function cellClicked(event) {
-    
+    //let fullBoard = 0
     
     
    // puts x or o into clicked box
@@ -36,11 +37,14 @@ function cellClicked(event) {
         event.target.innerHTML = player1
         playerTurn.innerText = 'your turn player two'
         turn = false;
+        //fullBoard = fullBoard + 1
     }else if (turn === false && gameOver === false) {
         event.target.innerHTML = player2
         playerTurn.innerText = 'your turn player one'
         turn = true;
+        //fullBoard = fullBoard + 1
     }
+    //console.log(fullBoard)
    // gets info data info form clicked box the pushed into that players array
     if (event.target.innerHTML === player1){
         player1Array.push(parseInt(event.target.dataset.cell))
@@ -64,9 +68,16 @@ function cellClicked(event) {
 
     }
 
-    if(winMessage.innerText.includes('wins')) {
-        event.preventDefault()
-    }
+    // if (fullBoard === 9) {
+    //     console.log('working')
+    // }
+
+    // for (let eachCell of cellArray) {
+    //     if(eachCell.innerText === 'O' || eachCell.innerText === 'X'){
+    //         console.log('working')
+    //     }
+    // }
+
 
     
 }
@@ -82,6 +93,8 @@ function restartGame() {
          player2Array = []
          document.getElementsByClassName("winMessage")[0].innerText = ''
          playerTurn.innerText = ''
+         gameOver = false
+         //fullBoard = 0
     }
     
 }
