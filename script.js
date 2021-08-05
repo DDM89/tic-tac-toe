@@ -19,7 +19,7 @@ var turn = true
 let player1 = "X"
 let player2 = "O"
 let gameOver = false
-
+let fullBoard = 0
 
 //for loop for each cell
 const cellArray = document.getElementsByClassName("square");
@@ -29,30 +29,27 @@ for (let eachCell of cellArray) {
 
 
 function cellClicked(event) {
-    //let fullBoard = 0
     
     
    // puts x or o into clicked box
-    if (turn === true && gameOver === false) {
+    if (turn === true && event.target.innerHTML === '') {
         event.target.innerHTML = player1
         playerTurn.innerText = 'your turn player two'
         turn = false;
-        //fullBoard = fullBoard + 1
-    }else if (turn === false && gameOver === false) {
+        fullBoard = fullBoard + 1
+    }else if (turn === false && event.target.innerHTML === '') {
         event.target.innerHTML = player2
         playerTurn.innerText = 'your turn player one'
         turn = true;
-        //fullBoard = fullBoard + 1
+        fullBoard = fullBoard + 1
     }
-    //console.log(fullBoard)
+    console.log(fullBoard)
    // gets info data info form clicked box the pushed into that players array
     if (event.target.innerHTML === player1){
         player1Array.push(parseInt(event.target.dataset.cell))
     }else if(event.target.innerHTML === player2){
         player2Array.push(parseInt(event.target.dataset.cell))
     }
-    // console.log("player1Array", player1Array)
-    // console.log("player2Array", player2Array)
     
     // for loop for the winning results
     for (let i = 0; i < winningConditions.length; i++) {
@@ -61,6 +58,7 @@ function cellClicked(event) {
         if (player1Array.includes(winCondition[0]) && player1Array.includes(winCondition[1]) && player1Array.includes(winCondition[2])) {
             winMessage.innerText = 'player one wins'
             gameOver = true
+            mainGame.innerText = 'x'
         }else if (player2Array.includes(winCondition[0]) && player2Array.includes(winCondition[1]) && player2Array.includes(winCondition[2])) {
             winMessage.innerText = 'player two wins'
             gameOver = true
@@ -68,17 +66,11 @@ function cellClicked(event) {
 
     }
 
-    // if (fullBoard === 9) {
-    //     console.log('working')
-    // }
-
-    // for (let eachCell of cellArray) {
-    //     if(eachCell.innerText === 'O' || eachCell.innerText === 'X'){
-    //         console.log('working')
-    //     }
-    // }
-
-
+    if (fullBoard === 9 && gameOver === false) {
+        winMessage.innerText = 'its a draw'
+    }
+    mainGame = event.target.parentElement.parentElement.children[0]
+    console.log(mainGame)
     
 }
 
@@ -94,7 +86,7 @@ function restartGame() {
          document.getElementsByClassName("winMessage")[0].innerText = ''
          playerTurn.innerText = ''
          gameOver = false
-         //fullBoard = 0
+         fullBoard = 0
     }
     
 }
