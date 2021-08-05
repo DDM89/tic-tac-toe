@@ -16,16 +16,14 @@ main {
 
 h4 {
     
-    
     font-family: "Permanent Marker", cursive;
     position: absolute;
+    /* margin: 0;
+    padding-left: 3%;
+    font-size: 188px;
+    line-height: 0.9;
+     */
     
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 400px;
-    margin: 0 auto;
-    padding-bottom: 86px; */
 }
 a {
     text-decoration: none;

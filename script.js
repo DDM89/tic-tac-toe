@@ -227,7 +227,7 @@ function cellClicked(event) {
         winMessage.innerText = 'its a draw'
     }
     mainGame = event.target.parentElement.parentElement.children[0]
-    console.log(fullBoard)
+    //console.log(fullBoard)
     //console.log(mainGame)
     // console.log(player1Array1)
     // console.log(player2Array1)
