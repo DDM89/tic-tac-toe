@@ -18,15 +18,16 @@ h4 {
     
     font-family: "Permanent Marker", cursive;
     position: absolute;
-    /* margin: 0;
+    margin: 0;
     padding-left: 3%;
     font-size: 188px;
     line-height: 0.9;
-     */
+    
     
 }
 a {
     text-decoration: none;
+    position: relative;
 }
 
 
