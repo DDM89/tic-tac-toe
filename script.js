@@ -31,9 +31,9 @@ let player1Array9 = []
 let player2Array9 = []
 let playerTurn = document.getElementById("playerTurn")
 let winMessage = document.getElementsByClassName("winMessage")[0]
-var turn = true
-let player1 = "X"
-let player2 = "O"
+let turn = true
+const player1 = "X"
+const player2 = "O"
 let gameOver1 = false
 let gameOver2 = false
 let gameOver3 = false
@@ -43,8 +43,18 @@ let gameOver6 = false
 let gameOver7 = false
 let gameOver8 = false
 let gameOver9 = false
-
 let mainGameOver = false
+let drawCount1 = 0
+let drawCount2 = 0
+let drawCount3 = 0
+let drawCount4 = 0
+let drawCount5 = 0
+let drawCount6 = 0
+let drawCount7 = 0
+let drawCount8 = 0
+let drawCount9 = 0
+let mainGameDraw = 0
+
 
 
 //for loop for each cell
@@ -56,11 +66,11 @@ for (let eachCell of cellArray) {
 
 function cellClicked(event) {
     mainData = parseInt(event.target.parentElement.parentElement.dataset.cell)
-    // if (mainData === 0) {
-    //     console.log('yes')
-    // }
-    
-
+    mainGame = event.target.parentElement.parentElement.children[0]
+    dontPush = event.target.parentElement.children[0]
+    drawOutcome = event.target.parentElement.parentElement
+    console.log(dontPush)
+    console.log(mainGame)
    // puts x or o into clicked box
     if (turn === true && event.target.innerHTML === '') {
         event.target.innerHTML = player1
@@ -75,42 +85,78 @@ function cellClicked(event) {
     }
     // console.log(fullBoard)
    // gets info data info form clicked box the pushed into that players array
-    if (event.target.innerHTML === player1 && mainData === 0){
+    if (event.target.innerHTML === player1 && mainData === 0 && dontPush.innerText === ''){
         player1Array1.push(parseInt(event.target.dataset.cell))
-    }else if(event.target.innerHTML === player2 && mainData === 0){
+        dontPush.innerText = 'q'
+        drawCount1 = drawCount1 + 1
+    }else if(event.target.innerHTML === player2 && mainData === 0 && dontPush.innerText === ''){
         player2Array1.push(parseInt(event.target.dataset.cell))
-    }else if (event.target.innerHTML === player1 && mainData === 1){
+        dontPush.innerText = 'q' 
+        drawCount1 = drawCount1 + 1
+    }else if (event.target.innerHTML === player1 && mainData === 1 && dontPush.innerText === ''){
         player1Array2.push(parseInt(event.target.dataset.cell))
-    }else if(event.target.innerHTML === player2 && mainData === 1){
+        dontPush.innerText = 'q'
+        drawCount2 = drawCount2 + 1
+    }else if(event.target.innerHTML === player2 && mainData === 1 && dontPush.innerText === ''){
         player2Array2.push(parseInt(event.target.dataset.cell))
-    }else if (event.target.innerHTML === player1 && mainData === 2){
+        dontPush.innerText = 'q'
+        drawCount2 = drawCount2 + 1
+    }else if (event.target.innerHTML === player1 && mainData === 2 && dontPush.innerText === ''){
         player1Array3.push(parseInt(event.target.dataset.cell))
-    }else if(event.target.innerHTML === player2 && mainData === 2){
+        dontPush.innerText = 'q'
+        drawCount3 = drawCount3 + 1
+    }else if(event.target.innerHTML === player2 && mainData === 2 && dontPush.innerText === ''){
         player2Array3.push(parseInt(event.target.dataset.cell))
-    }else if (event.target.innerHTML === player1 && mainData === 3){
+        dontPush.innerText = 'q'
+        drawCount3 = drawCount3 + 1
+    }else if (event.target.innerHTML === player1 && mainData === 3 && dontPush.innerText === ''){
         player1Array4.push(parseInt(event.target.dataset.cell))
-    }else if(event.target.innerHTML === player2 && mainData === 3){
+        dontPush.innerText = 'q'
+        drawCount4 = drawCount4 + 1
+    }else if(event.target.innerHTML === player2 && mainData === 3 && dontPush.innerText === ''){
         player2Array4.push(parseInt(event.target.dataset.cell))
-    }else if (event.target.innerHTML === player1 && mainData === 4){
+        dontPush.innerText = 'q'
+        drawCount4 = drawCount4 + 1
+    }else if (event.target.innerHTML === player1 && mainData === 4 && dontPush.innerText === ''){
         player1Array5.push(parseInt(event.target.dataset.cell))
-    }else if(event.target.innerHTML === player2 && mainData === 4){
+        dontPush.innerText = 'q'
+        drawCount5 = drawCount5 + 1
+    }else if(event.target.innerHTML === player2 && mainData === 4 && dontPush.innerText === ''){
         player2Array5.push(parseInt(event.target.dataset.cell))
-    }else if (event.target.innerHTML === player1 && mainData === 5){
+        dontPush.innerText = 'q'
+        drawCount5 = drawCount5 + 1
+    }else if (event.target.innerHTML === player1 && mainData === 5 && dontPush.innerText === ''){
         player1Array6.push(parseInt(event.target.dataset.cell))
-    }else if(event.target.innerHTML === player2 && mainData === 5){
+        dontPush.innerText = 'q'
+        drawCount6 = drawCount6 + 1
+    }else if(event.target.innerHTML === player2 && mainData === 5 && dontPush.innerText === ''){
         player2Array6.push(parseInt(event.target.dataset.cell))
-    }else if (event.target.innerHTML === player1 && mainData === 6){
+        dontPush.innerText = 'q'
+        drawCount6 = drawCount6 + 1
+    }else if (event.target.innerHTML === player1 && mainData === 6 && dontPush.innerText === ''){
         player1Array7.push(parseInt(event.target.dataset.cell))
-    }else if(event.target.innerHTML === player2 && mainData === 6){
+        dontPush.innerText = 'q'
+        drawCount7 = drawCount7 + 1
+    }else if(event.target.innerHTML === player2 && mainData === 6 && dontPush.innerText === ''){
         player2Array7.push(parseInt(event.target.dataset.cell))
-    }else if (event.target.innerHTML === player1 && mainData === 7){
+        dontPush.innerText = 'q'
+        drawCount7 = drawCount7 + 1
+    }else if (event.target.innerHTML === player1 && mainData === 7 && dontPush.innerText === ''){
         player1Array8.push(parseInt(event.target.dataset.cell))
-    }else if(event.target.innerHTML === player2 && mainData === 7){
+        dontPush.innerText = 'q'
+        drawCount8 = drawCount8 + 1
+    }else if(event.target.innerHTML === player2 && mainData === 7 && dontPush.innerText === ''){
         player2Array8.push(parseInt(event.target.dataset.cell))
-    }else if (event.target.innerHTML === player1 && mainData === 8){
+        dontPush.innerText = 'q'
+        drawCount8 = drawCount8 + 1
+    }else if (event.target.innerHTML === player1 && mainData === 8 && dontPush.innerText === ''){
         player1Array9.push(parseInt(event.target.dataset.cell))
-    }else if(event.target.innerHTML === player2 && mainData === 8){
+        dontPush.innerText = 'q'
+        drawCount9 = drawCount9 + 1
+    }else if(event.target.innerHTML === player2 && mainData === 8 && dontPush.innerText === ''){
         player2Array9.push(parseInt(event.target.dataset.cell))
+        dontPush.innerText = 'q'
+        drawCount9 = drawCount9 + 1
     }
     
     // for loop for the winning results
@@ -121,115 +167,152 @@ function cellClicked(event) {
             //winMessage.innerText = 'player one wins'
             mainArrayplayerone.push(mainData)
             player1Array1 = []
+            player2Array1 = []
             gameOver1 = true
             mainGame.innerHTML = player1
+            mainGameDraw = mainGameDraw + 1
         }else if (player2Array1.includes(winCondition[0]) && player2Array1.includes(winCondition[1]) && player2Array1.includes(winCondition[2])) {
             //winMessage.innerText = 'player two wins'
             mainArrayplayertwo.push(mainData)
+            player1Array1 = []
             player2Array1 = []
             gameOver1 = true
             mainGame.innerHTML = player2
+            mainGameDraw = mainGameDraw + 1
         }else if (player1Array2.includes(winCondition[0]) && player1Array2.includes(winCondition[1]) && player1Array2.includes(winCondition[2])) {
             //winMessage.innerText = 'player one wins'
             mainArrayplayerone.push(mainData)
             player1Array2 = []
+            player2Array2 = []
             gameOver2 = true
             mainGame.innerHTML = player1
+            mainGameDraw = mainGameDraw + 1
         }else if (player2Array2.includes(winCondition[0]) && player2Array2.includes(winCondition[1]) && player2Array2.includes(winCondition[2])) {
             //winMessage.innerText = 'player two wins'
             mainArrayplayertwo.push(mainData)
+            player1Array2 = []
             player2Array2 = []
             gameOver2 = true
             mainGame.innerHTML = player2
+            mainGameDraw = mainGameDraw + 1
         }else if (player1Array3.includes(winCondition[0]) && player1Array3.includes(winCondition[1]) && player1Array3.includes(winCondition[2])) {
             //winMessage.innerText = 'player one wins'
             mainArrayplayerone.push(mainData)
             player1Array3 = []
+            player2Array3 = []
             gameOver3 = true
             mainGame.innerHTML = player1
+            mainGameDraw = mainGameDraw + 1
         }else if (player2Array3.includes(winCondition[0]) && player2Array3.includes(winCondition[1]) && player2Array3.includes(winCondition[2])) {
             //winMessage.innerText = 'player two wins'
             mainArrayplayertwo.push(mainData)
+            player1Array3 = []
             player2Array3 = []
             gameOver3 = true
             mainGame.innerHTML = player2
+            mainGameDraw = mainGameDraw + 1
         }else if (player1Array4.includes(winCondition[0]) && player1Array4.includes(winCondition[1]) && player1Array4.includes(winCondition[2])) {
             //winMessage.innerText = 'player one wins'
             mainArrayplayerone.push(mainData)
             player1Array4 = []
+            player2Array4 = []
             gameOver4 = true
             mainGame.innerHTML = player1
+            mainGameDraw = mainGameDraw + 1
         }else if (player2Array4.includes(winCondition[0]) && player2Array4.includes(winCondition[1]) && player2Array4.includes(winCondition[2])) {
             //winMessage.innerText = 'player two wins'
             mainArrayplayertwo.push(mainData)
+            player1Array4 = []
             player2Array4 = []
             gameOver4 = true
             mainGame.innerHTML = player2
+            mainGameDraw = mainGameDraw + 1
         }else if (player1Array5.includes(winCondition[0]) && player1Array5.includes(winCondition[1]) && player1Array5.includes(winCondition[2])) {
             //winMessage.innerText = 'player one wins'
             mainArrayplayerone.push(mainData)
             player1Array5 = []
+            player2Array5 = []
             gameOver5 = true
             mainGame.innerHTML = player1
+            mainGameDraw = mainGameDraw + 1
         }else if (player2Array5.includes(winCondition[0]) && player2Array5.includes(winCondition[1]) && player2Array5.includes(winCondition[2])) {
             //winMessage.innerText = 'player two wins'
             mainArrayplayertwo.push(mainData)
+            player1Array5 = []
             player2Array5 = []
             gameOver5 = true
             mainGame.innerHTML = player2
+            mainGameDraw = mainGameDraw + 1
         }else if (player1Array6.includes(winCondition[0]) && player1Array6.includes(winCondition[1]) && player1Array6.includes(winCondition[2])) {
             //winMessage.innerText = 'player one wins'
             mainArrayplayerone.push(mainData)
             player1Array6 = []
+            player2Array6 = []
             gameOver6 = true
             mainGame.innerHTML = player1
+            mainGameDraw = mainGameDraw + 1
         }else if (player2Array6.includes(winCondition[0]) && player2Array6.includes(winCondition[1]) && player2Array6.includes(winCondition[2])) {
             //winMessage.innerText = 'player two wins'
             mainArrayplayertwo.push(mainData)
+            player1Array6 = []
             player2Array6 = []
             gameOver6 = true
             mainGame.innerHTML = player2
+            mainGameDraw = mainGameDraw + 1
         }else if (player1Array7.includes(winCondition[0]) && player1Array7.includes(winCondition[1]) && player1Array7.includes(winCondition[2])) {
             //winMessage.innerText = 'player one wins'
             mainArrayplayerone.push(mainData)
             player1Array7 = []
+            player2Array7 = []
             gameOver7 = true
             mainGame.innerHTML = player1
+            mainGameDraw = mainGameDraw + 1
         }else if (player2Array7.includes(winCondition[0]) && player2Array7.includes(winCondition[1]) && player2Array7.includes(winCondition[2])) {
             //winMessage.innerText = 'player two wins'
             mainArrayplayertwo.push(mainData)
+            player1Array7 = []
             player2Array7 = []
             gameOver7 = true
             mainGame.innerHTML = player2
+            mainGameDraw = mainGameDraw + 1
         }else if (player1Array8.includes(winCondition[0]) && player1Array8.includes(winCondition[1]) && player1Array8.includes(winCondition[2])) {
             //winMessage.innerText = 'player one wins'
             mainArrayplayerone.push(mainData)
             player1Array8 = []
+            player2Array8 = []
             gameOver8 = true
             mainGame.innerHTML = player1
+            mainGameDraw = mainGameDraw + 1
         }else if (player2Array8.includes(winCondition[0]) && player2Array8.includes(winCondition[1]) && player2Array8.includes(winCondition[2])) {
             //winMessage.innerText = 'player two wins'
             mainArrayplayertwo.push(mainData)
+            player1Array8 = []
             player2Array8 = []
             gameOver8 = true
             mainGame.innerHTML = player2
+            mainGameDraw = mainGameDraw + 1
         }else if (player1Array9.includes(winCondition[0]) && player1Array9.includes(winCondition[1]) && player1Array9.includes(winCondition[2])) {
             //winMessage.innerText = 'player one wins'
             mainArrayplayerone.push(mainData)
             player1Array9 = []
+            player2Array9 = []
             gameOver9 = true
             mainGame.innerHTML = player1
+            mainGameDraw = mainGameDraw + 1
         }else if (player2Array9.includes(winCondition[0]) && player2Array9.includes(winCondition[1]) && player2Array9.includes(winCondition[2])) {
             //winMessage.innerText = 'player two wins'
             mainArrayplayertwo.push(mainData)
+            player1Array9 = []
             player2Array9 = []
             gameOver9 = true
             mainGame.innerHTML = player2
-        }else if (mainArrayplayerone.includes(winCondition[0]) && mainArrayplayerone.includes(winCondition[1]) && mainArrayplayerone.includes(winCondition[2])) {
-            winMessage.innerText = 'player one wins'
-        }else if (mainArrayplayertwo.includes(winCondition[0]) && mainArrayplayertwo.includes(winCondition[1]) && mainArrayplayertwo.includes(winCondition[2])) {
-            winMessage.innerText = 'player two wins'
+            mainGameDraw = mainGameDraw + 1
         }
+        // }else if (mainArrayplayerone.includes(winCondition[0]) && mainArrayplayerone.includes(winCondition[1]) && mainArrayplayerone.includes(winCondition[2])) {
+        //     winMessage.innerText = 'player one wins'
+        // }else if (mainArrayplayertwo.includes(winCondition[0]) && mainArrayplayertwo.includes(winCondition[1]) && mainArrayplayertwo.includes(winCondition[2])) {
+        //     winMessage.innerText = 'player two wins'
+        // }
     } //end of loop
 
     for (let i = 0; i < winningConditions.length; i++) {
@@ -242,55 +325,73 @@ function cellClicked(event) {
             mainGameOver = true
         }
     }// end of loop
-
+    
+    console.log(drawCount1)
 
     // draw check
-    if (player1Array1.length === 5 || player2Array1.length === 5 && gameOver1 === false) {
+    if (drawCount1 === 9 && gameOver1 === false) {
         drawOutcome.style.background = 'red';
+        drawCount1 = 0
         player1Array1 = []
         player2Array1 = []
-    }else if (player1Array2.length === 5 || player2Array2.length === 5 && gameOver2 === false) {
+        mainGameDraw = mainGameDraw + 1
+    }else if (drawCount2 === 9 && gameOver2 === false) {
         drawOutcome.style.background = 'red';
+        drawCount2 = 0
         player1Array2 = []
         player2Array2 = []
-    }else if (player1Array3.length === 5 || player2Array3.length === 5 && gameOver3 === false) {
+        mainGameDraw = mainGameDraw + 1
+    }else if (drawCount3 === 9 && gameOver3 === false) {
         drawOutcome.style.background = 'red';
+        drawCount3 = 0
         player1Array3 = []
         player2Array3 = []
-    }else if (player1Array4.length === 5 || player2Array4.length === 5 && gameOver4 === false) {
+        mainGameDraw = mainGameDraw + 1
+    }else if (drawCount4 === 9 && gameOver4 === false) {
         drawOutcome.style.background = 'red';
+        drawCount4 = 0
         player1Array4 = []
         player2Array4 = []
-    }else if (player1Array5.length === 5 || player2Array5.length === 5 && gameOver5 === false) {
+        mainGameDraw = mainGameDraw + 1
+    }else if (drawCount5 === 9 && gameOver5 === false) {
         drawOutcome.style.background = 'red';
+        drawCount5 = 0
         player1Array5 = []
         player2Array5 = []
-    }else if (player1Array6.length === 5 || player2Array6.length === 5 && gameOver6 === false) {
+        mainGameDraw = mainGameDraw + 1
+    }else if (drawCount6 === 9 && gameOver6 === false) {
         drawOutcome.style.background = 'red';
+        drawCount6 = 0
         player1Array6 = []
         player2Array6 = []
-    }else if (player1Array7.length === 5 || player2Array7.length === 5 && gameOver7 === false) {
+        mainGameDraw = mainGameDraw + 1
+    }else if (drawCount7 === 9 && gameOver7 === false) {
         drawOutcome.style.background = 'red';
+        drawCount7 = 0
         player1Array7 = []
         player2Array7 = []
-    }else if (player1Array8.length === 5 || player2Array8.length === 5 && gameOver8 === false) {
+        mainGameDraw = mainGameDraw + 1
+    }else if (drawCount8 === 9 && gameOver8 === false) {
         drawOutcome.style.background = 'red';
+        drawCount8 = 0
+        player1Array8 = []
+        player2Array8 = []
+        mainGameDraw = mainGameDraw + 1
+    }else if (drawCount9 === 9 && gameOver9 === false) {
+        drawOutcome.style.background = 'red';
+        drawCount9 = 0
         player1Array9 = []
         player2Array9 = []
-    }else if (player1Array9.length === 5 || player2Array9.length === 5 && gameOver9 === false) {
-        drawOutcome.style.background = 'red';
-        player1Array9 = []
-        player2Array9 = []
+        mainGameDraw = mainGameDraw + 1
     }
 
-    if (mainArrayplayerone.length === 5 || mainArrayplayertwo.lenght === 5 && mainGameOver === false) {
+    if (mainGameDraw === 9 && mainGameOver === false) {
         winMessage.innerText = 'No Boddy Wins'
     }
-
     
     
-    mainGame = event.target.parentElement.parentElement.children[0]
-    drawOutcome = event.target.parentElement.parentElement
+    
+    
     
     //console.log(drawOutcome)
     //console.log(mainGame)
