@@ -1,13 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&family=Shadows+Into+Light&display=swap');
+
+
+
+
+
+
 body {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     background-color: #F5F5F5;
 }
 h1 {
     text-align: center;
+    font-family: 'Bungee Shade', cursive;
+    FONT-SIZE: 50px;
 }
 h3 {
     text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 40px;
 }
 main {
     display: flex;
@@ -24,6 +36,7 @@ main {
     grid-template-columns: repeat(3, auto);
     padding: 5px;
 }
+
 
 h4 {
     
@@ -44,6 +57,11 @@ a {
     text-decoration: none;
     color: hotpink;
     /* position: relative; */
+}
+h2{
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 40px;
 }
 
 
