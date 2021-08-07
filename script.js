@@ -9,6 +9,8 @@ const winningConditions = [
     [0, 4, 8],
     [2, 4, 6]
 ];
+const player1 = "X"
+const player2 = "O"
 let mainArrayplayerone = []
 let mainArrayplayertwo = []
 let player1Array1 = []
@@ -32,8 +34,6 @@ let player2Array9 = []
 let playerTurn = document.getElementById("playerTurn")
 let winMessage = document.getElementsByClassName("winMessage")[0]
 let turn = true
-const player1 = "X"
-const player2 = "O"
 let gameOver1 = false
 let gameOver2 = false
 let gameOver3 = false
@@ -388,24 +388,97 @@ function cellClicked(event) {
     
 }// end of function 
 
-
-// button to clear the board
-// const restartButton = document.getElementById("gamerestart")
-// restartButton.addEventListener('click', restartGame)
-// function restartGame() {
-//     for (let eachCell of cellArray){
-//          eachCell.innerText = ''
-//          player1Array = []
-//          player2Array = []
-//          document.getElementsByClassName("winMessage")[0].innerText = ''
-//          playerTurn.innerText = ''
-//          gameOver = false
-//          fullBoard = 0
-//     }
+ const container = document.getElementsByClassName('container')
+// button to start game
+const restartButton = document.getElementById("startgame")
+restartButton.addEventListener('click', startGame)
+function startGame() {
     
-// }
+         for (let eachContainer of container) {
+            eachContainer.style.display = 'grid';
+         }
+         playerTurn.innerText = 'Whoever Goes first is X And Player One'
+         restart.style.display = 'inline'
+         document.getElementById('info').style.display = 'none'
+    
+}
 
 
+const h5 = document.getElementsByTagName('h5')
+const h4 = document.getElementsByTagName('h4')
+//button to restart game
+const restart = document.getElementById('restartgame')
+restart.addEventListener('click', restartGame)
+function restartGame() {
+    for (let eachCell of cellArray){
+        eachCell.innerText = ''
+
+        
+   }
+    for (let h5Text of h5) {
+        h5Text.innerText = ''
+    }
+    for (let h4Text of h4) {
+        h4Text.innerText = ''
+    }
+    for (let eachContainer of container) {
+        eachContainer.style.background = 'none';
+     }   
+        document.getElementsByClassName("winMessage")[0].innerText = ''
+        playerTurn.innerText = 'Whoever Goes first is X And Player One'
+         mainArrayplayerone = []
+         mainArrayplayertwo = []
+         player1Array1 = []
+         player2Array1 = []
+        player1Array2 = []
+        player2Array2 = []
+        player1Array3 = []
+        player2Array3 = []
+        player1Array4 = []
+        player2Array4 = []
+        player1Array5 = []
+        player2Array5 = []
+        player1Array6 = []
+        player2Array6 = []
+        player1Array7 = []
+        player2Array7 = []
+        player1Array8 = []
+        player2Array8 = []
+        player1Array9 = []
+        player2Array9 = []
+        turn = true
+        gameOver1 = false
+        gameOver2 = false
+        gameOver3 = false
+        gameOver4 = false
+        gameOver5 = false
+        gameOver6 = false
+        gameOver7 = false
+        gameOver8 = false
+        gameOver9 = false
+        mainGameOver = false
+        drawCount1 = 0
+        drawCount2 = 0
+        drawCount3 = 0
+        drawCount4 = 0
+        drawCount5 = 0
+        drawCount6 = 0
+        drawCount7 = 0
+        drawCount8 = 0
+        drawCount9 = 0
+        mainGameDraw = 0
+        console.log('1',drawCount1)
+        console.log('2',drawCount2)
+        console.log('3',drawCount3)
+        console.log('4',drawCount4)
+        console.log('5',drawCount5)
+        console.log('6',drawCount6)
+        console.log('7',drawCount7)
+        console.log('8',drawCount8)
+        console.log('9',drawCount9)
+
+
+}
 
 
 

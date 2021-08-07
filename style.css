@@ -16,6 +16,14 @@ h1 {
     font-family: 'Bungee Shade', cursive;
     FONT-SIZE: 50px;
 }
+#info {
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 36px;
+}
+#startgame {
+    text-align: center;
+}
 h3 {
     text-align: center;
     font-family: 'Shadows Into Light', cursive;
@@ -32,7 +40,7 @@ main {
     flex-wrap: wrap;
 }
 .container {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, auto);
     padding: 5px;
 }
@@ -74,4 +82,8 @@ h2{
     cursor: pointer;
     line-height: 55px;
     font-size: 60px;
+}
+
+#restartgame {
+    display: none;
 }

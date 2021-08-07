@@ -10,7 +10,11 @@
 </head>
 <body>
     <h1>ULTIMATE TIC-TAC-TOE</h1>
-    <h3 id="playerTurn">Whoever Goes first is 'X' And Player One</h3>
+    <h3 id="playerTurn"></h3>
+    <p id="info">Welcome to Ultimate Tic-Tac-toe! The aim of the game is to secure your box in the mini game to make sure you win the main game! 
+        Each player will take it in turns to place an X or O in any given box. Once a player has won that box it becomes there’s. if it’s a draw then the box will turn red and uncalmable.
+        Remember that you don’t have to stick to one mini game at a time, so it can get a bit confusing!   
+        <button id="startgame">start</button></p>
     
     <main>
     <div data-cell="0" class='container'>
@@ -124,7 +128,9 @@
     </div>
 
     </main>
-    <button onClick="history.go(0);">Restart Game</button>
+    <!-- <button onClick="history.go(0);">Restart Game</button> -->
+    
+    <button id="restartgame">restart game</button>
     <h2 class="winMessage"></h2>
     
     
